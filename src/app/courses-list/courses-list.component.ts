@@ -12,7 +12,7 @@ export class CoursesListComponent implements OnInit {
   coursesObservable: Observable<any[]>;
   constructor(private db: AngularFireDatabase) { }
   ngOnInit() {
-    this.coursesObservable = this.getCourses('/courses');
+    this.coursesObservable = this.getCourses('/beneficio');
   }
   getCourses(listPath): Observable<any[]> {
     return this.db.list(listPath).valueChanges();

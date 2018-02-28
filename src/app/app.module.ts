@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,7 +13,7 @@ import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
-import { FirebaseConfig } from '../environments/firebase.config'; 
+import { environment } from '../environments/environment'; 
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { AboutComponent } from './components/about/about.component';
@@ -35,9 +37,10 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(FirebaseConfig.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    //AngularFireAuthModule,
     NgbModule.forRoot(),    ///para usar JQuery on bootstrap 
     HttpModule,
     app_routing

@@ -2,14 +2,41 @@
   courses-list works!
 </p>
 
+<ngb-carousel>
+    <ng-template ngbSlide>
+      <img src="https://lorempixel.com/900/500?r=1" alt="Random first slide">
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="https://lorempixel.com/900/500?r=2" alt="Random second slide">
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="https://lorempixel.com/900/500?r=3" alt="Random third slide">
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+
+<br>
+<br>
 <ul>
     <div *ngFor="let course of coursesObservable | async">
         <ngb-alert type="info" [dismissible]="false">
-            <h3><a href="#">{{course.title}}</a> </h3>
-            <p>{{course.description}}</p>
-            <div>
+            <h3>{{course.titulo}}</h3>
+            <p>{{course.descripcion}}</p>
+            <!-- <div>
                 <a href="{{course.url}}" target="_blank" class="btn btn-danger">Go To Course</a>
-            </div>
+            </div>  -->
         </ngb-alert> 
     </div>
 </ul>
